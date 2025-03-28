@@ -78,6 +78,16 @@ public class AppTest
         assertFalse(tortilla.contient_viande());
     }
 
+    @Test
+    public void testQuestion10()
+    {
+        Plat lasagnes = new Plat("Lasagnes", true, null, 2.8);
+        Plat tortilla = new Plat("Tortilla", false, Arrays.asList("gluten", "oeuf"), 1.8);
+        Menu ce_midi = new Menu(new ArrayList<Plat>(), Arrays.asList(lasagnes, tortilla), new ArrayList<Plat>());
+        assertFalse(ce_midi.contientAllergene("tomate"));
+        assertTrue(ce_midi.contientAllergene("oeuf"));
+    }
+
 
 
 }

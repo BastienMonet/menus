@@ -34,4 +34,22 @@ class Menu {
         else
             return true;
     }
+
+    public boolean contientAllergene(String nomAllergene){
+        for(Plat p : entrees){
+            if(p.aAllergenes() && p.getAllergenes().contains(nomAllergene))
+                return true;
+        }
+
+        for(Plat p : plats_principaux){
+            if(p.aAllergenes() && p.getAllergenes().contains(nomAllergene))
+                return true;
+        }
+
+        for(Plat p : desserts){
+            if(p.aAllergenes() && p.getAllergenes().contains(nomAllergene))
+                return true;
+        }
+        return false;
+    }
 }

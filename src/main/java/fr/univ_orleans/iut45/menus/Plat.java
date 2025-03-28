@@ -1,5 +1,6 @@
 package fr.univ_orleans.iut45.menus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Plat {
@@ -25,4 +26,14 @@ class Plat {
     public boolean contient_viande(){
         return contient_viande;
     }
+
+    public List<String> getAllergenes() {
+        return allergenes;
+    }
+
+    public boolean aAllergenes(){
+        return allergenes != null;
+    }
+
+
 }
