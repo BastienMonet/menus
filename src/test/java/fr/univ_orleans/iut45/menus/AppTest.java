@@ -2,11 +2,12 @@ package fr.univ_orleans.iut45.menus;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 
 public class AppTest
 {
@@ -59,5 +60,24 @@ public class AppTest
         Menu ce_soir = new Menu(les_entrees, les_plats_principaux, les_desserts);
         assertTrue(ce_soir.estComplet());
     }
+
+    @Test
+    public void testQuestion8()
+    {
+        Plat lasagnes = new Plat("Lasagnes", true, null, 2.8);
+        Plat tortilla = new Plat("Tortilla", false, null, 1.8);
+        Menu ce_midi = new Menu(new ArrayList(), Arrays.asList(lasagnes, tortilla), new ArrayList<Plat>());
+    }
+
+    @Test
+    public void testQuestion9()
+    {
+        Plat lasagnes = new Plat("Lasagnes", true, null, 2.8);
+        Plat tortilla = new Plat("Tortilla", false, null, 1.8);
+        assertTrue(lasagnes.contient_viande());
+        assertFalse(tortilla.contient_viande());
+    }
+
+
 
 }

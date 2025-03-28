@@ -92,7 +92,7 @@ src/test/java/fr/univ_orleans/iut45/menus/AppTest.java:60: error: cannot find sy
 
 javac -d bin -cp "lib/*:bin" src/test/java/fr/univ_orleans/iut45/menus/*.java
 
-java -cp "bin:lib/*" org.junit.runner.JUnitCore 
+java -cp "bin:lib/*" org.junit.runner.JUnitCore AppTest.java
 
 maintenant tout les test passent
 

@@ -21,4 +21,8 @@ class Plat {
     public double prixDeRevient() {
         return this.prix_de_revient;
     }
+
+    public boolean contient_viande(){
+        return contient_viande;
+    }
 }
