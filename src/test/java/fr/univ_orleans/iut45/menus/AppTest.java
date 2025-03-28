@@ -3,6 +3,10 @@ package fr.univ_orleans.iut45.menus;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertArrayEquals;
+
+
+
 
 import org.junit.Test;
 
@@ -86,6 +90,14 @@ public class AppTest
         Menu ce_midi = new Menu(new ArrayList<Plat>(), Arrays.asList(lasagnes, tortilla), new ArrayList<Plat>());
         assertFalse(ce_midi.contientAllergene("tomate"));
         assertTrue(ce_midi.contientAllergene("oeuf"));
+    }
+
+    @Test
+    public void testQuestion11(){
+        Plat lasagnes = new Plat("Lasagnes", true, null, 2.8);
+        Plat tortilla = new Plat("Tortilla", false, Arrays.asList("gluten", "oeuf"), 1.8);
+        Menu ce_midi = new Menu(new ArrayList<Plat>(), Arrays.asList(lasagnes, tortilla), new ArrayList<Plat>());
+        assertArrayEquals(ce_midi.listeAllergene(), Arrays.asList("gluten", "oeuf"));
     }
 
 
