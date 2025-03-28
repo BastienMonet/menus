@@ -52,3 +52,12 @@ Fichiers non suivis:
         target/
 
 oui, il faut les commits
+
+git add .
+
+git commit -m 
+
+git push origin master
+
+### 5
+
