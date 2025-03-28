@@ -36,6 +36,50 @@ class Menu {
             return true;
     }
 
+    public double prixMinRevient(){
+        Double min = null;
+        for(Plat p : entrees){
+            if(min != null && p.prixDeRevient()<min || min == null){
+                min = p.prixDeRevient();
+            }
+        }
+
+        for(Plat p : plats_principaux){
+            if(min != null && p.prixDeRevient()<min || min == null){
+                min = p.prixDeRevient();
+            }
+        }
+
+        for(Plat p : desserts){
+            if(min != null && p.prixDeRevient()<min || min == null){
+                min = p.prixDeRevient();
+            }
+        }
+        return min;
+    } 
+
+    public double prixMaxRevient(){
+        Double max = null;
+        for(Plat p : entrees){
+            if(max != null && p.prixDeRevient()>max || max == null){
+                max = p.prixDeRevient();
+            }
+        }
+
+        for(Plat p : plats_principaux){
+            if(max != null && p.prixDeRevient()>max || max == null){
+                max = p.prixDeRevient();
+            }
+        }
+
+        for(Plat p : desserts){
+            if(max != null && p.prixDeRevient()>max || max == null){
+                max = p.prixDeRevient();
+            }
+        }
+        return max;
+    } 
+
     public boolean contientAllergene(String nomAllergene){
         for(Plat p : entrees){
             if(p.aAllergenes() && p.getAllergenes().contains(nomAllergene))

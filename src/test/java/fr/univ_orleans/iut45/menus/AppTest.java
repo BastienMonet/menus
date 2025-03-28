@@ -71,6 +71,7 @@ public class AppTest
         Plat lasagnes = new Plat("Lasagnes", true, null, 2.8);
         Plat tortilla = new Plat("Tortilla", false, null, 1.8);
         Menu ce_midi = new Menu(new ArrayList(), Arrays.asList(lasagnes, tortilla), new ArrayList<Plat>());
+        assertEquals(ce_midi.prixMinRevient(), 1.8);
     }
 
     @Test
@@ -100,6 +101,9 @@ public class AppTest
         assertEquals(ce_midi.listeAllergene(), Arrays.asList("gluten", "oeuf"));
     }
 
+    @Test
+    public void testQuestion12(){
 
+    }
 
 }
