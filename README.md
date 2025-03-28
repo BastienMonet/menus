@@ -61,3 +61,39 @@ git push origin master
 
 ### 5
 
+commit 88d3d0f0c74efa6386f3c83320a394ddac9e2ea9 (HEAD -> Bastien, origin/Bastien)
+Author: Joaquin "Joe" Lapin <Jo.Lapin@univ-hochmoehrefelder.fr>
+Date:   Fri Mar 28 16:11:41 2025 +0100
+
+    Question 5
+
+
+### 6
+
+non, tout les tests ne passe pas
+
+javac -d bin src/main/java/fr/univ_orleans/iut45/menus/*.java
+
+javac -d bin -cp "lib/*:bin" src/test/java/fr/univ_orleans/iut45/menus/*.java
+
+src/test/java/fr/univ_orleans/iut45/menus/AppTest.java:41: error: cannot find symbol
+        assertEquals(false, ce_midi.estComplet());
+                                   ^
+  symbol:   method estComplet()
+  location: variable ce_midi of type Menu
+src/test/java/fr/univ_orleans/iut45/menus/AppTest.java:60: error: cannot find symbol
+        assertTrue(ce_soir.estComplet());
+                          ^
+  symbol:   method estComplet()
+  location: variable ce_soir of type Menu
+2 errors
+
+
+
+javac -d bin -cp "lib/*:bin" src/test/java/fr/univ_orleans/iut45/menus/*.java
+
+java -cp "bin:lib/*" org.junit.runner.JUnitCore 
+
+maintenant tout les test passent
+
+

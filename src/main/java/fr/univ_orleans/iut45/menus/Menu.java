@@ -26,4 +26,12 @@ class Menu {
     public List<Plat> getDesserts() {
         return this.desserts;
     }
+
+    public boolean estComplet(){
+        if(entrees.size() == 0 || plats_principaux.size() == 0 || desserts.size() == 0){
+            return false;
+        }
+        else
+            return true;
+    }
 }
