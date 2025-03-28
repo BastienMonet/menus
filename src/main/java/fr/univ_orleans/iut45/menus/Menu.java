@@ -1,5 +1,6 @@
 package fr.univ_orleans.iut45.menus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Menu {
@@ -51,5 +52,27 @@ class Menu {
                 return true;
         }
         return false;
+    }
+
+
+
+    public List<String> listeAllergene(){
+        List<String> list = new ArrayList<>();
+        
+        for(Plat p : entrees){
+            if (p.aAllergenes())
+                list.addAll(p.getAllergenes());
+        }
+
+        for(Plat p : plats_principaux){
+            if (p.aAllergenes())
+                list.addAll(p.getAllergenes());
+        }
+
+        for(Plat p : desserts){
+            if (p.aAllergenes())
+                list.addAll(p.getAllergenes());
+        }
+        return list;
     }
 }

@@ -97,7 +97,7 @@ public class AppTest
         Plat lasagnes = new Plat("Lasagnes", true, null, 2.8);
         Plat tortilla = new Plat("Tortilla", false, Arrays.asList("gluten", "oeuf"), 1.8);
         Menu ce_midi = new Menu(new ArrayList<Plat>(), Arrays.asList(lasagnes, tortilla), new ArrayList<Plat>());
-        assertArrayEquals(ce_midi.listeAllergene(), Arrays.asList("gluten", "oeuf"));
+        assertEquals(ce_midi.listeAllergene(), Arrays.asList("gluten", "oeuf"));
     }
 
 
